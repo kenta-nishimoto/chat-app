@@ -1,3 +1,7 @@
+<!-- ソフトウェアの仕様、規格、インストール方法などを文書化したアプリケーションの説明書のようなファイルです。 -->
+<!-- 特徴はマークダウン方式で記載されている -->
+<!-- マークダウン方式とは、、、https://qiita.com/Qiita/items/c686397e4a0f4f11683d -->
+
 # テーブル設計
 
 ## users テーブル
@@ -32,6 +36,8 @@
 | ------ | ---------- | ------------------------------ |
 | user   | references | null: false, foreign_key: true |
 | room   | references | null: false, foreign_key: true |
+
+<!-- referencesとは、他テーブルから情報を参照する際に、用いる型です。 -->
 
 ### Association
 

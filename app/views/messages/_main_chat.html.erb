@@ -1,27 +1,43 @@
 <div class="chat-header">
   <div class="left-header">
     <div class="header-title">
+    <%# 下記の記述でチャット画面のヘッダー部分にルーム名が表示される。
+    この＠roomはコントローラーから取得している %>
       <%= @room.name%>
     </div>
   </div>
   <div class="right-header">
     <div class="header-button">
+    <%# 下記の記述で「チャット終了」を押すとをDBから削除される。 %>
       <%= link_to "チャットを終了する", room_path(@room), method: :delete %>
     </div>
   </div>
 </div>
 
 <div class="messages">
+<%# 下記の記述で保存されているメッセージのビューを部分テンプレートで呼び出している %>
   <%= render partial: 'message', collection: @messages %>
 </div>
 
+<%# 下記の記述はメッセージがDBに保存されるためにform_withを使用している %>
 <%= form_with model: [@room, @message], html: {class: "form"}, local: true do |f|%>
+<%# 上記の記述では引数が2つある。
+これはmessagesのルーティングでネスト構造となっているため、
+チャットルームとメッセージとの間には、あるチャットルームに属しているメッセージ、という親子関係があります。 %>
+<%# 記述したform_withの第1引数@roomには「指定のチャットルームのレコード情報」、
+第2引数@messageには「Messageモデルのからのインスタンス（Message.new）」が入る %>
+
   <div class="form-input">
     <%= f.text_field :content, class: 'form-message', placeholder: 'type a message' %>
+    
     <label class="form-image">
       <span class="image-file">画像</span>
       <%= f.file_field :image, class: 'hidden' %>
     </label>
+    <%# label要素とは、フォームの中でフォームの項目名とフォームの入力要素
+    （画像選択フォーム、プルダウン、チェックボックスなど）を関連付けるための要素です。
+    label要素の役割の1つは、label要素がクリックされた時に、子要素もクリックされたことにしてくれることです。 %>
+    
   </div>
   <%= f.submit '送信', class: 'form-submit' %>
 <% end %>

@@ -1,3 +1,5 @@
+# メッセージのマイグレーションファイル
+
 class CreateMessages < ActiveRecord::Migration[6.0]
   def change
     create_table :messages do |t|
@@ -8,3 +10,5 @@ class CreateMessages < ActiveRecord::Migration[6.0]
     end
   end
 end
+
+# メッセージはroomとユーザー名を取得する必要があるためこの記述

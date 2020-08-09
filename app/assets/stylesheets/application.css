@@ -17,3 +17,5 @@
  * {
   box-sizing: border-box;
 }
+/* box-sizing: border-boxとは、、、padding等で要素が意図しないサイズになることを防ぐ記述。 */
+/* ＊セレクトとは、、、全ての要素に適応させるという意味がある */

@@ -1,10 +1,14 @@
+<%# これはアカウントの編集ページのビュー %>
+
 <div class='account-page' id='account-page'>
   <div class='account-page__inner clearfix'>
     <div class='account-page__inner--left account-page__header'>
       <h2>Edit Account</h2>
       <h5>アカウントの編集</h5>
+
+      <%# 下記の記述でログアウトが可能になった %>
       <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: 'btn'%>
-      <%= link_to "ログアウト", "#", class: 'btn'%>
+
       <%= link_to "チャットページに戻る", :back, class: 'btn'%>
     </div>
     <div class='account-page__inner--right user-form'>
@@ -32,3 +36,4 @@
     </div>
   </div>
 </div>
+
