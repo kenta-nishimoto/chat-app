@@ -4,7 +4,11 @@
     <title>ChatApp</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
+
+    <%# 以下の記述でリセットCSSの設定ができている。
+    今回はYahooが開発した「YUI3」というリセットCSSを使用している %>
     <link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/3.18.1/build/cssreset/cssreset-min.css">
+
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>

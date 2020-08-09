@@ -31,6 +31,13 @@ gem 'bootsnap', '>= 1.4.2', require: false
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
+
+ # 下記の記述でRSpecの導入
+ # ↪︎記入後「bundle install」
+  gem 'rspec-rails'
+  gem 'factory_bot_rails'
+  gem 'faker'
+
 end
 
 group :development do
@@ -57,5 +64,14 @@ gem 'devise'
 
 gem 'pry-rails'
 
+# 下記二つは「Active Storage」というファイルのアップデートを簡単に実装してくれるGem
+# ↪︎ターミナルで「brew install imagemagick」を実行しインストール
 gem 'mini_magick'
+# ↪︎「ImageMagick」とは、コマンドラインから簡単に画像の保存形式の変更などが行えるツールです。
 gem 'image_processing', '~> 1.2'
+# ↪︎「image_processing」とは、画像のサイズを調整してくれるgemです。
+
+# 記述後ターミナルで「bundle install」
+# ↪︎「Active Storage」をrails内で使用できるようにするために
+# 　ターミナルで「rails active_storage:install」を実行し、
+# 　「rails db:migrate」をっ実行すると新たなテーブルが作成される

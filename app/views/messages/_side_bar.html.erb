@@ -1,20 +1,32 @@
 <div class="side-bar-header">
   <div class="header-name">
+  
+  <%# 下記の記述でトップページからユーザー編集ページへ遷移できるようになった。 %>
     <%= link_to edit_user_path(current_user) do %>
+    <%# edit_user_path(current_user) ：これはパス %>
       <%= current_user.name %>
+    <%# current_user.name：これはログイン中のユーザー名 %>
     <% end %>
+
   </div>
+
+  <%# 下記の記述でチャットルームの新規作成のビューに移るようになる %>
   <div class="create-room">
     <%= link_to "チャットを作成する", new_room_path %>
   </div>
 </div>
 
+<%# 下記の記述で作られたルーム名がサイドバーに表示されるようになる %>
 <div class="rooms">
   <% current_user.rooms.each do |room| %>
     <div class="room">
       <div class="room-name">
+      <%# 下記の記述でサイドバーのチャットルーム名に飛ぶことができる %>
+      <%# パスにroomを引数とすることで、メッセージと紐付いているチャットルームのidを持たせることができます。 %>
         <%= link_to room.name, room_messages_path(room) %>
       </div>
+      <%# チャットルーム名をクリックすると、messagesコントローラーのindexアクションが実行され、
+      チャットルームのページに遷移できます。 %>
     </div>
   <% end %>
 </div>
