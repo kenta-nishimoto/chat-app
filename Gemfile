@@ -68,7 +68,7 @@ gem 'pry-rails'
 # ↪︎ターミナルで「brew install imagemagick」を実行しインストール
 gem 'mini_magick'
 # ↪︎「ImageMagick」とは、コマンドラインから簡単に画像の保存形式の変更などが行えるツールです。
-gem 'image_processing', '~> 1.2'
+gem 'image_processing', '~> 1.12'
 # ↪︎「image_processing」とは、画像のサイズを調整してくれるgemです。
 
 # 記述後ターミナルで「bundle install」
